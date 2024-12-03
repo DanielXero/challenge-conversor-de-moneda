@@ -5,10 +5,13 @@ public class ConvertidorMoneda {
     private String monedaDestino;
     private double tasaConversion;
 
-    public ConvertidorMoneda(ConvertidorMonedaApi miConvertidorMonedaApi) {
+    private double valor;
+
+    public ConvertidorMoneda(ConvertidorMonedaApi miConvertidorMonedaApi, double valor) {
         this.monedaBase = miConvertidorMonedaApi.base_code();
         this.monedaDestino = miConvertidorMonedaApi.target_code();
         this.tasaConversion = miConvertidorMonedaApi.conversion_rate();
+        this.valor = valor;
     }
 
     public String getMonedaBase() {
@@ -23,12 +26,21 @@ public class ConvertidorMoneda {
         return tasaConversion;
     }
 
+    public double getValor() {
+        return valor;
+    }
+
+    public void setValor(double valor) {
+        this.valor = valor;
+    }
+
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("ConvertidorMoneda{");
+        final StringBuilder sb = new StringBuilder("ConvertidorMoneda {");
         sb.append("monedaBase = '").append(monedaBase).append('\'');
         sb.append(", monedaDestino = '").append(monedaDestino).append('\'');
         sb.append(", tasaConversion = ").append(tasaConversion);
+        sb.append(", valor = ").append(valor);
         sb.append('}');
         return sb.toString();
     }
