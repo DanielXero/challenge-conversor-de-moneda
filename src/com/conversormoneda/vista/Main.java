@@ -60,7 +60,6 @@ public class Main {
                     case 1 -> {
                         monedaOrigen = "USD";
                         monedaDestino = "ARS";
-
                     }
                     case 2 -> {
                         monedaOrigen = "ARS";
